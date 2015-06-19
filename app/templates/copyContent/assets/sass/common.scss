@@ -1,0 +1,23 @@
+@charset "utf-8";
+@import "compass/utilities/";
+@import "compass/reset";
+@import "compass/css3";
+
+html{
+	font-size: 62.5%;// 10px
+}
+@mixin clearfix(){
+    @include pie-clearfix();
+}
+
+.clearfix{
+    @include clearfix();
+}
+
+.container{
+	max-width: 120rem;
+	margin-left: auto;
+	margin-right: auto;
+    @include clearfix();
+}
+
