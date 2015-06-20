@@ -5,5 +5,8 @@
 * `npm i` 安装依赖
 * `npm link`
 * `npm install -g yo`
-* `cd 要生成前端项目的`
+* `cd 要生成前端项目的目录`
 * `yo front-end`
+
+## 生成一个自己的项目结构生成器
+[官方教程](http://yeoman.io/authoring/)
