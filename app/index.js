@@ -24,5 +24,6 @@ module.exports = generators.Base.extend({
     app: function() {
         // this.log('sourceRoot: %s, destinationRoot: %s', this.sourceRoot(),this.destinationRoot()); // 目标文件夹
         this.directory('copyContent', this.destinationRoot());
+        this.npmInstall();// 安装 npm 的依赖
     }
 });
