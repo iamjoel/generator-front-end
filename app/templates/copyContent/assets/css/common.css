@@ -58,6 +58,15 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font-size: 12px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
 .clearfix {
   *zoom: 1;
 }
@@ -65,6 +74,14 @@ html {
   content: "";
   display: table;
   clear: both;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
 }
 
 .container {
@@ -77,4 +94,9 @@ html {
   content: "";
   display: table;
   clear: both;
+}
+
+img[src=""] {
+  background-color: #ddd;
+  outline: 1px solid #ff0;
 }

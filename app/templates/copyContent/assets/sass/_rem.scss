@@ -1,0 +1,33 @@
+@charset "utf-8";
+$divide: 6.4;
+$pswWidth: 640;
+$ppr: 640px/$divide/1rem;// 定义单位
+$pprVal: 640/6.4;// 640px的psd中，1rem = 100px。换算是除100。即使不用Sass也很好算
+
+// https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+@mixin toRem($property, $values...) {
+    $max: length($values);
+    $remValues: '';
+    @for $i from 1 through $max {
+        $value: nth($values, $i) * $divide / $pswWidth;
+        $remValues: #{$remValues + $value}rem;
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
+    #{$property}: $remValues;
+}
+
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+@function addRemUnit($val, $unit: px) {
+    // @debug $val;
+    @if $val !=0 {
+        $val: $val/$pprVal;
+        $val: $val + rem;
+    }
+    @return $val;
+}
+

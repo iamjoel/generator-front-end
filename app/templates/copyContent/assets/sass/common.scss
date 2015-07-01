@@ -2,10 +2,19 @@
 @import "compass/utilities/";
 @import "compass/reset";
 @import "compass/css3";
+@import "_variables";
 
 html{
 	font-size: 62.5%;// 10px
 }
+body{
+	font-size: 12px;
+}
+a {
+    color: $link-color;
+    text-decoration: none;
+}
+
 @mixin clearfix(){
     @include pie-clearfix();
 }
@@ -13,11 +22,23 @@ html{
 .clearfix{
     @include clearfix();
 }
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
 
 .container{
 	max-width: 120rem;
 	margin-left: auto;
 	margin-right: auto;
     @include clearfix();
+}
+
+img[src=""] {// for test and find no src img
+    background-color: #ddd;
+    outline: 1px solid #ff0;
 }
 

@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import "_rem";
+@import "_variables";
+@import "compass/utilities/";
+@import "compass/utilities/sprites";
+
+
+
+@mixin clearfix(){
+    @include pie-clearfix();
+}
+
+
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+@function addRemUnit($val, $unit: px) {
+    // @debug $val;
+    @if $val !=0 {
+        $val: $val/$pprVal;
+        $val: $val + rem;
+    }
+    @return $val;
+}
+
+//$offset-x的正值向右移，$offset-y的正值向下移
+// 将图片精灵的图片大小和位置进行缩放。实现方式通过把单位由px变成rem
+@mixin rem-sprite($sprites, $name) {
+    background-repeat: no-repeat;
+    // 为了去掉字符串中 assert。。。config.rb中设置不了去asset的
+    // background-image: #{str-slice(#{sprite-url($sprites)}, 0, 5) + str-slice(#{sprite-url($sprites)}, 13)}; //雪碧图路径
+    background-image:sprite-url($sprites);
+    background-position: addRemUnit(strip-units(nth(sprite-position($sprites, $name), 1))) addRemUnit(strip-units(nth(sprite-position($sprites, $name), 2)));
+    background-size: sprite-width($sprites)/$ppr sprite-height($sprites)/$ppr;
+}
+
+@mixin rem-sprite-size($sprites, $name, $fixW: 0, $fixH: 0) {
+    width: (image-width(sprite-file($sprites, $name)) + $fixH)/$ppr; //目标图片宽度
+    height: (image-height(sprite-file($sprites, $name)) + $fixH)/$ppr; //目标图片高度
+}
+
+@mixin rem-sprite-pos($sprites, $name, $offset-x: 0, $offset-y: 0) {
+    background-position: addRemUnit(strip-units(nth(sprite-position($sprites, $name), 1)) + $offset-x) addRemUnit(strip-units(nth(sprite-position($sprites, $name), 2)) + $offset-y);
+}
+
+
+// 地图
+@mixin loc($x: 0, $y: 0, $itemW: $skin-ice-game-item-width) {
+	left: #{($x * $itemW)/ $pprVal}rem;
+	top: #{($y * $itemW)/ $pprVal}rem;
+}
+
+// 小人的位置
+@mixin locPeo($x: 0, $y: 0, $itemW: $skin-ice-game-item-width, $x-offset: -6, $y-offset: -35) {
+	left: #{($x * $itemW + $x-offset)/ $pprVal}rem;
+	top: #{($y * $itemW + $y-offset)/ $pprVal}rem;
+}
+
+
