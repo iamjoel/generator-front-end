@@ -10,7 +10,7 @@ var DIST_PATH = 'build';
 
 var paths = {
     js: [ // js目录
-        SRC_PATH + '/**/*.js', '!' + SRC_PATH + '/**/*.min.js'// 排除已经压缩过的js
+        SRC_PATH + '/**/*.js' // , '!' + SRC_PATH + '/**/*.min.js'排除已经压缩过的js
     ],
     css: [
         SRC_PATH + '/**/*.css'
@@ -26,7 +26,7 @@ var paths = {
     ]
 };
 
-gulp.task('build', ['min-js', 'min-css', 'move-html', 'move-image']);
+gulp.task('build', ['min-js', 'min-css', 'min-image', 'move-html']);
 
 // 压缩js
 gulp.task('min-js', ['remove-dist-js'], function() {
@@ -49,9 +49,9 @@ gulp.task('move-html', ['remove-dist-html'], function() {
         .pipe(gulp.dest(DIST_PATH));
 });
 
-// 移动HTML
-gulp.task('move-image', ['remove-dist-image'], function() {
+gulp.task('min-image', ['remove-dist-image'], function() {
     return gulp.src(paths.image)
+        .pipe(plugins.imagemin({ progressive: true }))
         .pipe(gulp.dest(DIST_PATH));
 });
 
