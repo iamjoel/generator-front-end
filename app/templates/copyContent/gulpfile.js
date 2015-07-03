@@ -1,15 +1,26 @@
 // todo https://github.com/jonkemp/gulp-useref http://imziv.com/blog/article/read.htm?id=60
 // http://markdalgleish.github.io/presentation-build-wars-gulp-vs-grunt
 var gulp = require('gulp');
-var gulpLoadPlugins = require('gulp-load-plugins');// 加载所有的插件
+var gulpLoadPlugins = require('gulp-load-plugins'); // 加载所有的插件
 var plugins = gulpLoadPlugins();
 var del = require('del');
 var vinylPaths = require('vinyl-paths');
 var pkg = require('./package.json');
+var combiner = require('stream-combiner2');
+var gutil = plugins.util;
+var handleError = function(err) {
+    var colors = gutil.colors;
+    console.log('\n')
+    gutil.log(colors.red('Error!'))
+    gutil.log('fileName: ' + colors.red(err.fileName))
+    gutil.log('lineNumber: ' + colors.red(err.lineNumber))
+    gutil.log('message: ' + err.message)
+    gutil.log('plugin: ' + colors.yellow(err.plugin))
+}
 
 
-var SRC_PATH = 'src/';
-var DIST_PATH = 'build';
+var SRC_PATH = 'src';
+var DIST_PATH = 'dist';
 
 var paths = {
     js: [ // js目录
@@ -34,12 +45,15 @@ gulp.task('build', ['min-js', 'min-css', 'move-image', 'move-html']);
 
 // 压缩js
 gulp.task('min-js', ['remove-dist-js'], function() {
-    return gulp.src(paths.js)
-        .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.stripDebug())// 去掉console，alert，debugger语句
-        .pipe(plugins.uglify()) // 压缩
-        .pipe(plugins.sourcemaps.write('.'))
-        .pipe(gulp.dest(DIST_PATH));
+    var combined = combiner.obj([gulp.src(paths.js),
+        plugins.sourcemaps.init(),
+        plugins.stripDebug(), // 去掉console，alert，debugger语句
+        plugins.uglify(), // 压缩
+        plugins.sourcemaps.write('.'),
+        gulp.dest(DIST_PATH)
+    ]);
+    combined.on('error', handleError);// 优化报错信息
+    return combined;
 });
 
 // 压缩css
@@ -104,5 +118,3 @@ gulp.task('remove-demo', function() {
         })
         .pipe(vinylPaths(del));
 });
-
-
