@@ -8,5 +8,38 @@
 * `cd 要生成前端项目的目录`
 * `yo front-end`
 
-## 生成一个自己的项目结构生成器
+## 执行`yo front-end`做了什么
+1 将`app/templates/copyContent`下的所有文件拷贝到当前文件夹    
+生成的项目结构如下（tree /f）
+
+```
+└─src 源码
+    │
+    ├──css
+    ├──common.css
+    ├──image
+    ├──js
+    ├──sass
+    │  ├─common.scss
+    │  ├─_rem.scss
+    │  ├─_utilities.scss
+    │  ├─_variables.scss
+    ├─vendor 第三方组件
+    │  ├─caculate-rem.js
+    │  ├─jquery.js
+    ├──views .html文件
+    ├─config.rb compass框架的配置文件
+    └─index.html
+├──gulpfile.js
+├──.gitignore
+└──package.json
+```
+
+2 执行`npm install`
+
+
+## 配置的任务
+* `gulp build` 构建项目：将js，css文件进行压缩，其压缩后的文件和html，image文件一起移动到`build`文件夹
+
+## 创建自己的项目结构生成器
 [官方教程](http://yeoman.io/authoring/)
