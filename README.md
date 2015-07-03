@@ -39,7 +39,7 @@
 
 
 ## 配置的任务
-* `gulp build` 构建项目：将js，css文件进行压缩，其压缩后的文件和html，image文件一起移动到`build`文件夹
+* `gulp build` 构建项目：将js,css,image文件进行压缩，其压缩后的文件和html文件一起移动到`build`文件夹
 
 ## 创建自己的项目结构生成器
 [官方教程](http://yeoman.io/authoring/)
