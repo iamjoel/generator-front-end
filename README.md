@@ -21,11 +21,11 @@
     ├──js
     ├──sass
     │  ├─common.scss
-    │  ├─_rem.scss
-    │  ├─_utilities.scss
+    │  ├─_rem.scss px转化成rem
+    │  ├─_utilities.scss 工具方法，包括生成以rem为单位的图片精灵
     │  ├─_variables.scss
     ├─vendor 第三方组件
-    │  ├─caculate-rem.js
+    │  ├─caculate-rem.js 根据屏幕的不同宽度给根节点设置不同的字号
     │  ├─jquery.js
     ├──views .html文件
     ├─config.rb compass框架的配置文件
