@@ -1,1 +1,6 @@
-!function(){function n(n){var u=[],c={};return n.forEach(function(n){c[n]||(u.push(n),c[n]=!0)}),u}n([1,1,3,6,3])}();
+(function() {
+    function add(a, b) {
+        return a + b;
+    }
+    add(1, 2);
+})();
