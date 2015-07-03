@@ -3,6 +3,8 @@
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');// 加载所有的插件
 var plugins = gulpLoadPlugins();
+var del = require('del');
+var vinylPaths = require('vinyl-paths');
 var pkg = require('./package.json');
 
 
@@ -71,28 +73,28 @@ gulp.task('remove-dist-js', function() {
     return gulp.src(DIST_PATH + '/**/*.js', {
             read: false
         })
-        .pipe(plugins.clean());
+        .pipe(vinylPaths(del));
 });
 
 gulp.task('remove-dist-css', function() {
     return gulp.src(DIST_PATH + '/**/*.css', {
             read: false
         })
-        .pipe(plugins.clean());
+        .pipe(vinylPaths(del));
 });
 
 gulp.task('remove-dist-html', function() {
     return gulp.src(DIST_PATH + '/**/*.html', {
             read: false
         })
-        .pipe(plugins.clean());
+        .pipe(vinylPaths(del));
 });
 
 gulp.task('remove-dist-image', function() {
     return gulp.src([DIST_PATH + '/**/*.+(png|gif|jpg|jpeg)'], {
             read: false
         })
-        .pipe(plugins.clean());
+        .pipe(vinylPaths(del));
 });
 
 // 删除demo
@@ -100,7 +102,7 @@ gulp.task('remove-demo', function() {
     return gulp.src(paths.demo, {
             read: false
         })
-        .pipe(plugins.clean());
+        .pipe(vinylPaths(del));
 });
 
 
