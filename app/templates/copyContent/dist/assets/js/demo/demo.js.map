@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/js/demo/demo.js"],"names":["add","a","b"],"mappings":"CAAA,WACI,QAASA,GAAIC,EAAGC,GACZ,MAAOD,GAAIC,EAEfF,EAAI,EAAG","file":"assets/js/demo/demo.js","sourcesContent":["(function() {\r\n    function add(a, b) {\r\n        return a + b;\r\n    }\r\n    add(1, 2);\r\n})();\r\n"],"sourceRoot":"/source/"}

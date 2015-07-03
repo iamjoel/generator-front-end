@@ -1,0 +1,435 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 12px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.container {
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+  *zoom: 1;
+}
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img[src=""] {
+  background-color: #ddd;
+  outline: 1px solid #ff0;
+}
+
+/*! Kite v0.2.0 | MIT License | github.com/kitecss */
+/*
+# kite core
+
+1. Fill in `inline-block` gaps and then reset to `font-size` root font-size `rem`
+2. For Android: Android don't fill in `inline-block` gaps. `display: table;` magic fills in them.  
+3. For lte IE 8: IE 8 can't use `rem`. Use `medium` keyword for the purpose of reset `font-size`.
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item">B</div>
+  <div class="kite__item">C</div>
+</div>
+```
+*/
+.kite {
+  display: table;
+  width: 100%;
+  font-size: 0 !important;
+}
+
+/*
+Opera 12 has causing too wide gaps bug by setting `font-size: 0'.
+If you need to fix this bug, use the following code.
+
+```
+.opera:-o-prefocus,
+.kite {
+  font-size: 0.5px !important;
+}
+```
+*/
+.kite__item {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: medium;
+  font-size: 1rem;
+  vertical-align: top;
+}
+
+/*
+# kite functions
+*/
+/*
+## Horizontal align items
+
+```html
+<div class="kite kite--center">
+  <div class="kite__item">A</div>
+  <div class="kite__item">B</div>
+  <div class="kite__item">C</div>
+</div>
+```
+*/
+.kite--left {
+  text-align: left !important;
+}
+
+.kite--center {
+  text-align: center !important;
+}
+
+.kite--right {
+  text-align: right !important;
+}
+
+/*
+## Sizing items
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item kite__item--left">B</div>
+  <div class="kite__item kite__item--right">C</div>
+</div>
+```
+*/
+.kite__item--fifth {
+  width: 20%;
+}
+
+.kite__item--fourth {
+  width: 25%;
+}
+
+.kite__item--third {
+  width: 33.333%;
+}
+
+.kite__item--half {
+  width: 50%;
+}
+
+.kite__item--full {
+  width: 100%;
+}
+
+/*
+## Vertical align items
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item kite__item--middle">B</div>
+  <div class="kite__item kite__item--middle">C</div>
+</div>
+```
+*/
+.kite--top > .kite__item {
+  vertical-align: top !important;
+}
+
+.kite--middle > .kite__item {
+  vertical-align: middle !important;
+}
+
+.kite--bottom > .kite__item {
+  vertical-align: bottom !important;
+}
+
+/*
+## Horizontal align content in items
+
+```html
+<div class="kite">
+  <div class="kite__item kite__item--center">A</div>
+  <div class="kite__item kite__item--center">B</div>
+  <div class="kite__item kite__item--center">C</div>
+</div>
+```
+*/
+.kite__item--left {
+  text-align: left !important;
+}
+
+.kite__item--center {
+  text-align: center !important;
+}
+
+.kite__item--right {
+  text-align: right !important;
+}
+
+/*
+## Intrinsic width 
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item kite__item--left">B</div>
+  <div class="kite__item kite__item--right">C</div>
+</div>
+```
+*/
+.kite__item--fifth {
+  width: 20%;
+}
+
+.kite__item--fourth {
+  width: 25%;
+}
+
+.kite__item--third {
+  width: 33.333%;
+}
+
+.kite__item--half {
+  width: 50%;
+}
+
+.kite__item--full {
+  width: 100%;
+}
+
+/*
+## Justify align items
+
+```html
+<div class="kite kite--justify">
+  <div class="kite__item">A</div>
+  <div class="kite__item">B</div>
+  <div class="kite__item">C</div>
+</div>
+```
+*/
+.kite--justify {
+  display: block;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+.kite--justify:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+/*
+## Fill items
+
+```html
+<div class="kite kite--justify">
+  <div class="kite__item">A</div>
+  <div class="kite__item">B</div>
+  <div class="kite__item">C</div>
+</div>
+```
+*/
+.kite--fill.is-equalize {
+  table-layout: fixed;
+}
+.kite--fill > .kite__item {
+  display: table-cell;
+}
+
+/*
+## Absolute position items
+
+```html
+<div style="position:relative">
+  <div class="kite kite--position">
+    <div class="kite__item">A</div>
+  </div>
+</div>
+```
+*/
+.kite--position {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+.kite--position.is-position-fixed {
+  position: fixed;
+}
+.kite--position:after {
+  display: inline-block;
+  content: "";
+  height: 100%;
+  vertical-align: middle;
+}
+.kite--position > .kite__item {
+  vertical-align: middle;
+  text-align: left;
+}
+
+/*
+## Grid layout items
+
+NOTE: this can trigger a horizontal scrollbar if the component is as wide as the viewport.
+Use padding on a container(.kite), or `overflow-x:hidden` to protect against it.
+
+```html
+<div class="kite kite--grid has-gutter">
+  <div class="kite__item is-4of12">A</div>
+  <div class="kite__item is-4of12">B</div>
+  <div class="kite__item is-4of12">C</div>
+</div>
+```
+*/
+.kite--grid > .kite__item.is-1of12 {
+  width: 8.33333%;
+}
+.kite--grid > .kite__item.is-2of12 {
+  width: 16.66667%;
+}
+.kite--grid > .kite__item.is-3of12 {
+  width: 25%;
+}
+.kite--grid > .kite__item.is-4of12 {
+  width: 33.33333%;
+}
+.kite--grid > .kite__item.is-5of12 {
+  width: 41.66667%;
+}
+.kite--grid > .kite__item.is-6of12 {
+  width: 50%;
+}
+.kite--grid > .kite__item.is-7of12 {
+  width: 58.33333%;
+}
+.kite--grid > .kite__item.is-8of12 {
+  width: 66.66667%;
+}
+.kite--grid > .kite__item.is-9of12 {
+  width: 75%;
+}
+.kite--grid > .kite__item.is-10of12 {
+  width: 83.33333%;
+}
+.kite--grid > .kite__item.is-11of12 {
+  width: 91.66667%;
+}
+.kite--grid > .kite__item.is-12of12 {
+  width: 100%;
+}
+.kite--grid.has-gutter {
+  display: block;
+  width: auto;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.kite--grid.has-gutter > .kite__item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navs__item {
+  box-sizing: border-box;
+  padding: 15px;
+  width: 200px;
+  border: 1px solid #f00;
+}
+.navs__item__pic {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+}
+.navs__item__text {
+  text-align: center;
+}
