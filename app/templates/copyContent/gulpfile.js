@@ -28,7 +28,7 @@ var paths = {
 };
 // /**/*.+(png|gif|jpg|jpeg) 是glob(简化的正则)语法。具体见 https://github.com/isaacs/node-glob
 
-gulp.task('build', ['min-js', 'min-css', 'min-image', 'move-html']);
+gulp.task('build', ['min-js', 'min-css', 'move-image', 'move-html']);
 
 // 压缩js
 gulp.task('min-js', ['remove-dist-js'], function() {
@@ -55,11 +55,17 @@ gulp.task('move-html', ['remove-dist-html'], function() {
         .pipe(gulp.dest(DIST_PATH));
 });
 
-gulp.task('min-image', ['remove-dist-image'], function() {
+gulp.task('move-image', ['remove-dist-image'], function() {
     return gulp.src(paths.image)
-        .pipe(plugins.imagemin({ progressive: true }))
         .pipe(gulp.dest(DIST_PATH));
 });
+
+// 如果要压缩图片，用 gulp-imagemin。这里不用的元素是，安装插件这个异常慢。。。 npm install gulp-imagemin --save-dev
+// gulp.task('min-image', ['remove-dist-image'], function() {
+//     return gulp.src(paths.image)
+//         .pipe(plugins.imagemin({ progressive: true }))
+//         .pipe(gulp.dest(DIST_PATH));
+// });
 
 gulp.task('remove-dist-js', function() {
     return gulp.src(DIST_PATH + '/**/*.js', {

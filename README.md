@@ -39,7 +39,7 @@
 
 
 ## 配置的任务
-* `gulp build` 构建项目：将js,css,image文件进行压缩,并且生成sourcemap，其压缩后的文件和html文件一起移动到`build`文件夹
+* `gulp build` 构建项目：将js,css文件进行压缩,并且生成sourcemap，其压缩后的文件和image，html文件一起移动到`build`文件夹。image可以用gulp-imagemin来压缩，这里没用的原因是，其安装过程（非下载过程）异常的慢。。。
 
 ## 创建自己的项目结构生成器
 [官方教程](http://yeoman.io/authoring/)
