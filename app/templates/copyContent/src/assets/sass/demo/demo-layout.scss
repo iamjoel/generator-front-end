@@ -6,6 +6,17 @@ h2{
 	font-size: 16px;
 	font-weight: bold;
 }
+.labels{
+	&__item{
+		font-size: 14px;
+		height: 1.5em;
+		line-height: 1.5em;
+		margin-right: 10px;
+		border: 1px solid #3892f5;
+		color: #3892f5;
+		padding: 0 10px;
+	}
+}
 .navs{
 	&__item{
 		box-sizing: border-box;
@@ -22,5 +33,20 @@ h2{
 		&__text{
 			text-align: center;
 		}
+	}
+}
+
+.info{
+	&__img{
+		width: 100px;
+		height: 100px;
+		margin-right: 20px;
+	}
+	&__title{
+		font-size: 16px;
+		line-height: 1.5em;
+	}
+	&__item{
+		font-size: 14px;
 	}
 }

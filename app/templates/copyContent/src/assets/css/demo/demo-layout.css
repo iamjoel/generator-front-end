@@ -417,6 +417,16 @@ h2 {
   font-weight: bold;
 }
 
+.labels__item {
+  font-size: 14px;
+  height: 1.5em;
+  line-height: 1.5em;
+  margin-right: 10px;
+  border: 1px solid #3892f5;
+  color: #3892f5;
+  padding: 0 10px;
+}
+
 .navs__item {
   box-sizing: border-box;
   padding: 15px;
@@ -432,4 +442,17 @@ h2 {
 }
 .navs__item__text {
   text-align: center;
+}
+
+.info__img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+.info__title {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+.info__item {
+  font-size: 14px;
 }
