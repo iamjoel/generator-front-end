@@ -1,0 +1,19 @@
+@import "common";
+@import "compass/layout/sticky-footer";
+@include sticky-footer(54px, "#root", "#root-footer", "#footer");
+
+#root{
+	overflow-y: auto;
+	.content{
+		// height: 2500px;
+		background-color: #eee;
+	}
+}
+
+#footer{
+	line-height: 54px;
+	text-align: center;
+	background-color: #f60;
+	font-size: 16px;
+	color: #fff;
+}
