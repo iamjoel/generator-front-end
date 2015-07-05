@@ -1,16 +1,51 @@
+@charset "utf-8";
+@import "common";
 @import "compass/layout/stretching";
+@import "compass/css3";
+@import "compass/utilities";
+// compass 中应该定义了的。。。
+$selection-support-threshold: 0.1;
+@mixin selection($background-color: null, $color: contrast-color($background-color)) {
+  @include with-each-prefix(css-selection, $selection-support-threshold) {
+    $selector: "";
+    @if $current-prefix != null {
+      $selector: $current-prefix + "-";
+    }
+    $selector: "&::#{$selector}selection";
+    #{$selector} {
+      color: $color;
+      background-color: $background-color;
+      @content;
+    }
+  }
+}
+.stretch {
+    position: relative; //必须
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+    &__content {
+        @include stretch;
+        line-height: 200px;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        background-color: #f60;
+    }
+}
 
-.stretch{
-	position: relative;//必须
-	margin: 10px auto;
-	width: 200px;
-	height: 200px;
-	&__content{
-		@include stretch;
-		line-height: 200px;
-		font-size: 16px;
-		color: #fff;
-		text-align: center;
-		background-color: #f60;
+.cross-browser {
+	[class^="cross-browser__"]{
+		font-size: 14px;
+        line-height: 40px;
+        margin: 20px 0;
 	}
+    &__opacity {
+        @include opacity(0.4);
+        background-color: #f60;
+        color: #fff;
+    }
+    &__text-selection{
+    	@include selection(#f00, #fff);
+    }
 }
