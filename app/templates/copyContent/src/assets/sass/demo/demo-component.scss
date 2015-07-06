@@ -7,26 +7,27 @@
 // compass 中应该定义了的。。。
 $selection-support-threshold: 0.1;
 @mixin selection($background-color: null, $color: contrast-color($background-color)) {
-  @include with-each-prefix(css-selection, $selection-support-threshold) {
-    $selector: "";
-    @if $current-prefix != null {
-      $selector: $current-prefix + "-";
+    @include with-each-prefix(css-selection, $selection-support-threshold) {
+        $selector: "";
+        @if $current-prefix !=null {
+            $selector: $current-prefix + "-";
+        }
+        $selector: "&::#{$selector}selection";
+        #{$selector}{
+            color: $color;
+            background-color: $background-color;
+            @content;
+        }
     }
-    $selector: "&::#{$selector}selection";
-    #{$selector} {
-      color: $color;
-      background-color: $background-color;
-      @content;
-    }
-  }
 }
 
-.place-holder-img{
+.place-holder-img {
     display: block;
     width: 200px;
     height: 200px;
     margin: 20px auto;
 }
+
 .stretch {
     position: relative; //必须
     margin: 10px auto;
@@ -43,36 +44,64 @@ $selection-support-threshold: 0.1;
 }
 
 .cross-browser {
-	[class^="cross-browser__"]{
-		font-size: 14px;
+    [class^="cross-browser__"] {
+        font-size: 14px;
         line-height: 40px;
-        margin: 20px 0;
-	}
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
     &__opacity {
         @include opacity(0.4);
         background-color: #f60;
         color: #fff;
     }
-    &__text-selection{
-    	@include selection(#f00, #fff);
+    &__text-selection {
+        @include selection(#f00, #fff);
     }
-    &__ellipsis{
+    &__ellipsis {
         @include ellipsis;
         width: 300px;
     }
     @import "compass/typography";
-    &__force-wrap,&__force-wrap--no{
+    &__force-wrap,
+    &__force-wrap--no {
         width: 300px;
         outline: 1px solid #ff0;
         padding: 10px;
     }
-    &__force-wrap{
+    &__force-wrap {
         @include force-wrap;
+    }
+    &__anim {
+        &__block {
+            width: 200px;
+            height: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f60;
+            @include animation(bounce 3s infinite);
+        }
+        @include keyframes(bounce) {
+            0% {
+                @include transform(translateX(0));
+            }
+            20% {
+                @include translateX(-80px);
+                @include skewX(20deg);
+            }
+            90% {
+                @include translateX(100px);
+            }
+            100% {
+                @include translateX(0px);
+                @include skewX(0);
+            }
+        }
     }
 }
 
 @import "compass/typography";
-.hide-text{
+.hide-text {
     @include replace-text("demo/demo.png");
     margin: 20px auto;
     width: 64px;

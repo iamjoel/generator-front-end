@@ -1,5 +1,6 @@
 // todo https://github.com/jonkemp/gulp-useref http://imziv.com/blog/article/read.htm?id=60
 // http://markdalgleish.github.io/presentation-build-wars-gulp-vs-grunt
+// gulp-changed 获得那些修改的文件
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins'); // 加载所有的插件
 var plugins = gulpLoadPlugins();

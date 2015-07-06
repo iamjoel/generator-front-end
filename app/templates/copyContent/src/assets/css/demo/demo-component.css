@@ -90,7 +90,8 @@ img[src=""]:after {
 .cross-browser [class^="cross-browser__"] {
   font-size: 14px;
   line-height: 40px;
-  margin: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .cross-browser__opacity {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
@@ -128,7 +129,94 @@ img[src=""]:after {
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
-
+.cross-browser__anim__block {
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f60;
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
+}
+@-moz-keyframes bounce {
+  0% {
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    -moz-transform: translateX(-80px);
+    transform: translateX(-80px);
+    -moz-transform: skewX(20deg);
+    transform: skewX(20deg);
+  }
+  90% {
+    -moz-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+  100% {
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+    -moz-transform: skewX(0);
+    transform: skewX(0);
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    -webkit-transform: translateX(-80px);
+    transform: translateX(-80px);
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+  }
+  90% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    -webkit-transform: skewX(0);
+    transform: skewX(0);
+  }
+}
+@keyframes bounce {
+  0% {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    -moz-transform: translateX(-80px);
+    -ms-transform: translateX(-80px);
+    -webkit-transform: translateX(-80px);
+    transform: translateX(-80px);
+    -moz-transform: skewX(20deg);
+    -ms-transform: skewX(20deg);
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+  }
+  90% {
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+  100% {
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    -moz-transform: skewX(0);
+    -ms-transform: skewX(0);
+    -webkit-transform: skewX(0);
+    transform: skewX(0);
+  }
+}
 .hide-text {
   text-indent: -119988px;
   overflow: hidden;
