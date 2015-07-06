@@ -98,6 +98,35 @@ $selection-support-threshold: 0.1;
             }
         }
     }
+    &__inline-block{
+    	&__item{
+    		@include inline-block;
+    		width: 30px;
+    		height: 40px;
+    		margin-right: 10px;
+    		border: 1px solid #f00;
+    		text-align: center;
+    	}
+    }
+    &__border-radious{
+    	&__item{
+    		background-color: #f00;
+    		@include inline-block;
+    		width: 100px;
+    		height: 100px;
+    		margin-right: 10px;
+    		border: 1px solid #f00;
+    		&:nth-child(2){
+    			@include border-radius(10px);
+    		}
+    		&:nth-child(3){
+    			@include border-radius(10px 15px 20px 50px);
+    		}
+    		&:nth-child(4){
+    			@include border-radius(10px 15px 20px 50px,20px 15px 30px 40px);
+    		}
+    	}
+    }
 }
 
 @import "compass/typography";
