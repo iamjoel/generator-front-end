@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "common";
+@import "_text";
 @import "compass/layout/stretching";
 @import "compass/css3";
 @import "compass/utilities";
@@ -18,6 +19,13 @@ $selection-support-threshold: 0.1;
       @content;
     }
   }
+}
+
+.place-holder-img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
 }
 .stretch {
     position: relative; //必须
@@ -48,4 +56,25 @@ $selection-support-threshold: 0.1;
     &__text-selection{
     	@include selection(#f00, #fff);
     }
+    &__ellipsis{
+        @include ellipsis;
+        width: 300px;
+    }
+    @import "compass/typography";
+    &__force-wrap,&__force-wrap--no{
+        width: 300px;
+        outline: 1px solid #ff0;
+        padding: 10px;
+    }
+    &__force-wrap{
+        @include force-wrap;
+    }
+}
+
+@import "compass/typography";
+.hide-text{
+    @include replace-text("demo/demo.png");
+    margin: 20px auto;
+    width: 64px;
+    height: 64px;
 }

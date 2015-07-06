@@ -1,7 +1,6 @@
 @charset "utf-8";
-@import "compass/utilities/";
-@import "compass/reset";
-@import "compass/css3";
+@import "compass";
+@import "compass/layout/";
 @import "_variables";
 
 html{
@@ -15,7 +14,19 @@ a {
     text-decoration: none;
 }
 
-@mixin clearfix(){
+img[src=""] {// for test and find no src img
+    @include background-image(linear-gradient(120deg, #2ac363, #cd8c14, #9c4cc2));
+    position: relative;
+    &:after{
+        content: 'src空';//
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        @include stretch;
+    }
+}
+
+@mixin clearfix(){// 还有另外的几个见 http://compass-style.org/reference/compass/utilities/general/clearfix/
     @include pie-clearfix();
 }
 
@@ -37,8 +48,5 @@ a {
     @include clearfix();
 }
 
-img[src=""] {// for test and find no src img
-    background-color: #ddd;
-    outline: 1px solid #ff0;
-}
+
 
