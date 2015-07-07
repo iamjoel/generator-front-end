@@ -1,3 +1,4 @@
+# http://compass-style.org/help/documentation/configuration-reference/
 require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
@@ -16,6 +17,7 @@ images_dir = "assets/image"
 
 # soucemap。To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
+sourcemap = true
 
 
 # If you prefer the indented syntax, you might want to regenerate this
@@ -23,3 +25,6 @@ line_comments = false
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+# compass 帮助方法生成的资源地址为相对路径
+relative_assets = true
