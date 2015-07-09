@@ -4,43 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>一些组件</title>
-    <link rel="stylesheet" href="../assets/css/demo/demo-component.css">
+    <link rel="stylesheet" href="../assets/css/component.css">
 </head>
 
 <body>
-    <img src="" alt="" class="place-holder-img">
-    <div class="stretch">
-        <div class="stretch__content">用绝对方式内容充满父级</div>
-    </div>
-    <div class="cross-browser">
-        <h2>一系列浏览器兼容性较好的写法</h2>
-        <div class="cross-browser__opacity">透明度写法</div>
-        <div class="cross-browser__text-selection">文字选中时的样式(选中我~)</div>
-        <div class="cross-browser__ellipsis">文字超出省略号。很长的文本很长的文本很长的文本很长的文本很长的文本很长的文本很长的文本很长的文本很长的文本很长的文本很长的文本</div>
-        <div class="cross-browser__force-wrap--no">未强制换行。http://www.jianshu.com/users/EhUmA3/latest_articles/
-        </div>
-        <div class="cross-browser__force-wrap">强制换行（有时会出现很长的url或者很长的内容之间没用空格的，就需要）。如：http://www.jianshu.com/users/EhUmA3/latest_articles/
-        </div>
-        <div class="cross-browser__anim">
-            <h2>动画</h2>
-            <div class="cross-browser__anim__block"></div>
-        </div>
-        <div class="cross-browser__inline-block">
-        	<h2>inline block</h2>
-        	<div class="cross-browser__inline-block__item">a</div>
-        	<div class="cross-browser__inline-block__item">b</div>
-        </div>
-        <div class="cross-browser__border-radious">
-        	<h2>圆角</h2>
-        	<div class="cross-browser__border-radious__item"></div>
-        	<div class="cross-browser__border-radious__item"></div>
-        	<div class="cross-browser__border-radious__item"></div>
-        </div>
-    </div>
-    <h2>背景图替代文字，并隐藏文本</h2>
-    <div class="hide-text">smile(静态服务器中打开)</div>
+    <div class="container">
+        <div class="row">
+            <ul class="side-nav col-md-3">
+                <li class="side-nav__header"></li>
+                <li class="side-nav__item">分页</li>
+            </ul>
 
+            <div class="col-md-9">
+                <h2>分页</h2>
+                <ul class="paging">
+                    <li class="disabled"><a href="javascript:void(0);" class="first-page">首页</a></li>
+                    <li class="disabled"><a href="javascript:void(0);" class="prev-page">上一页</a></li>
+                    <li class="current"><a href="javascript:void(0);" class="normal-page" data-id="1">1</a></li>
+                    <li><a href="javascript:void(0);" class="normal-page" data-id="2">2</a></li>
+                    <li><a href="javascript:void(0);" class="normal-page" data-id="3">3</a></li>
+                    <li><a href="javascript:void(0);" class="normal-page" data-id="4">4</a></li>
+                    <li><a href="javascript:void(0);" class="next-page">下一页</a></li>
+                    <li><a href="javascript:void(0);" class="last-page">末页</a></li>
+                </ul>
+            </div>
+        </div>
 
+    </div>
 </body>
 
 </html>

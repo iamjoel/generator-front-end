@@ -1,0 +1,26 @@
+p {
+  font-size: 16px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  p {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 768px) and (max-width: 1023px) and (min--moz-device-pixel-ratio: 2), only screen and (min-width: 768px) and (max-width: 1023px) and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-width: 768px) and (max-width: 1023px) and (min-device-pixel-ratio: 2), only screen and (min-width: 768px) and (max-width: 1023px) and (min-resolution: 192dpi), only screen and (min-width: 768px) and (max-width: 1023px) and (min-resolution: 2dppx) {
+  p {
+    color: #ddd;
+  }
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  p {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=media-queries.css.map */

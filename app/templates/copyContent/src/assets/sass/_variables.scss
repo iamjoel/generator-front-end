@@ -16,3 +16,17 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-yahei:tahoma,arial,"STXihei","Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", "宋体", SimSun;
 $font-family-hei:tahoma,arial,"STXihei",SimHei,"Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", "宋体", SimSun;
 $font-family-song:tahoma,arial,"宋体", SimSun;
+
+
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Grid system
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
