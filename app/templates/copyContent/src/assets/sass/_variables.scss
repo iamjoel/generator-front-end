@@ -6,10 +6,8 @@ $text-color:            #333 !default;
 
 
 //** Global textual link color.
-$link-color:            $text-color !default;
+$link-color:            #0e90d2;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      $text-color !default;
-
 
 $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;

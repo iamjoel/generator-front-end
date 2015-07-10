@@ -4,16 +4,18 @@
 @import "_variables";
 
 @import "compass/reset";
+*, :before, :after{
+    @include box-sizing(border-box);
+}
 html{
-	font-size: 62.5%;// 10px
+    font-size: 62.5%;// 10px
 }
 body{
-	font-size: 12px;
+    font-size: 12px;
 }
-a {
-    color: $link-color;
-    text-decoration: none;
-}
+
+@import "_type";// 排版
+
 
 img[src=""] {// for test and find no src img
     @include background-image(linear-gradient(120deg, #2ac363, #cd8c14, #9c4cc2));
@@ -48,6 +50,10 @@ img[src=""] {// for test and find no src img
 	margin-right: auto;
     @include clearfix();
 }
+
+// layout
+@import "kite.scss";
+@import "_grid.scss";
 
 
 
