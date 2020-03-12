@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/iamjoel/generator-front-end",
   "dependencies": {
-    "yeoman-generator": "^0.20.1",
+    "yeoman-generator": "^2.0.0",
     "yosay": "^1.0.4"
   }
 }
